@@ -3,8 +3,9 @@ use serde::{Deserialize, Serialize};
 use sqlx::FromRow;
 
 mod user;
+pub use user::{CreateUser, SigninUser};
 
-#[derive(Debug, Clone, Serialize, Deserialize, FromRow)]
+#[derive(Debug, Clone, Serialize, Deserialize, FromRow,PartialEq)]
 pub struct User {
     pub id: i64,
     pub fullname: String,
